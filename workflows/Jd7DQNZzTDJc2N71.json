@@ -1,0 +1,282 @@
+{
+  "active": true,
+  "connections": {
+    "Kiểm tra đơn hàng mới tạo": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lưu thông tin": {
+      "main": [
+        [
+          {
+            "node": "Gửi tin Zalo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Lưu thông tin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-09T09:47:24.548Z",
+  "id": "Jd7DQNZzTDJc2N71",
+  "isArchived": false,
+  "meta": null,
+  "name": "2 - Hồng - Gửi thông báo đến Zalo khi có đơn hàng mới",
+  "nodes": [
+    {
+      "parameters": {
+        "event": "order.created"
+      },
+      "type": "n8n-nodes-base.wooCommerceTrigger",
+      "typeVersion": 1,
+      "position": [
+        -496,
+        0
+      ],
+      "id": "05186e68-c8d0-4008-8ea4-64361ae4ed79",
+      "name": "Kiểm tra đơn hàng mới tạo",
+      "webhookId": "ba0bf3b2-2ba2-4aba-81ad-538c90c24072",
+      "credentials": {
+        "wooCommerceApi": {
+          "id": "YeePakWQ7rvYheDB",
+          "name": "WooCommerce sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "threadId": "1065949318692196563",
+        "type": 1,
+        "message": "=📦 THÔNG TIN ĐƠN HÀNG MỚI:\n\n- SẢN PHẨM: {{ $json['Sản phẩm'] }}\n- SỐ LƯỢNG: {{ $json['Số lượng'] }}\n- MÃ ĐƠN HÀNG: {{ $json['Mã đơn hàng'] }}\n- TÊN KHÁCH HÀNG: {{ $json['Tên khách hàng'] }}\n- ĐỊA CHỈ: {{ $json['Địa Chỉ'] }}\n- SĐT: {{ $json['Sđt'] }}\n- THỜI GIAN ĐẶT: {{ $json['Thời gian đặt'] }}\n- PHƯƠNG THỨC THANH TOÁN: {{ $json['Phương thức thanh toán'] }}\n- TỔNG TIỀN: {{ $json['Tổng tiền'] }}\n",
+        "quote": {},
+        "mentions": {}
+      },
+      "type": "n8n-nodes-zalo-tools.zaloSendMessage",
+      "typeVersion": 4,
+      "position": [
+        288,
+        0
+      ],
+      "id": "cddbe07b-0f20-488a-bbad-f760e80e678c",
+      "name": "Gửi tin Zalo",
+      "credentials": {
+        "zaloApi": {
+          "id": "Q9ZDuWnqr1DHtDUl",
+          "name": "Zalo API Sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1B24vujiYCwEvH75ogxNOHpAiaTuAn9kEo0Mh8jsZOrU",
+          "mode": "list",
+          "cachedResultName": "SPA Calla",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1B24vujiYCwEvH75ogxNOHpAiaTuAn9kEo0Mh8jsZOrU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 12401753,
+          "mode": "list",
+          "cachedResultName": "Thông Tin Đặt hàng",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1B24vujiYCwEvH75ogxNOHpAiaTuAn9kEo0Mh8jsZOrU/edit#gid=12401753"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Mã đơn hàng": "={{ $json.id }}",
+            "Trạng thái": "={{ $json.status }}",
+            "Thời gian đặt": "={{ $json.date_created }}",
+            "Tên khách hàng": "={{ $json.billing.first_name }}",
+            "Địa Chỉ": "={{ $json.billing.address_1 }}",
+            "Email": "={{ $json.billing.email }}",
+            "Sđt": "={{ $json.billing.phone }}",
+            "Phương thức thanh toán": "={{ $json.payment_method_title }}",
+            "Số lượng": "={{ $json.quantityList }}",
+            "Tổng tiền": "={{ $json.line_items[0].total }}Vnđ",
+            "Sản phẩm": "={{ $json.productList }}"
+          },
+          "matchingColumns": [
+            "Sản phẩm"
+          ],
+          "schema": [
+            {
+              "id": "Sản phẩm",
+              "displayName": "Sản phẩm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Số lượng",
+              "displayName": "Số lượng",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Mã đơn hàng",
+              "displayName": "Mã đơn hàng",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Trạng thái",
+              "displayName": "Trạng thái",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tên khách hàng",
+              "displayName": "Tên khách hàng",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Địa Chỉ",
+              "displayName": "Địa Chỉ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sđt",
+              "displayName": "Sđt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tổng tiền",
+              "displayName": "Tổng tiền",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Phương thức thanh toán",
+              "displayName": "Phương thức thanh toán",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Thời gian đặt",
+              "displayName": "Thời gian đặt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        48,
+        0
+      ],
+      "id": "c0456dd5-d231-4024-bcd9-2d1befb30e70",
+      "name": "Lưu thông tin",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "jrdwFmaTBkFLjulZ",
+          "name": "Sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $json.line_items;\n\n// Ghép số lượng các sản phẩm: ví dụ \"2, 3, 1\"\nconst quantityList = items.map(item => item.quantity).join(', ');\n\n// Ghép tên + số lượng sản phẩm cho cột \"Sản phẩm\"\nconst productList = items.map(item => `${item.name} x${item.quantity}`).join('\\n');\n\nreturn [{\n  json: {\n    ...$json,\n    productList,\n    quantityList\n  }\n}];\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        0
+      ],
+      "id": "a5f21af2-d07e-4908-86a9-9107a608d8c9",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-09T09:47:24.548Z",
+      "updatedAt": "2025-08-09T09:47:24.548Z",
+      "role": "workflow:owner",
+      "workflowId": "Jd7DQNZzTDJc2N71",
+      "projectId": "XWfpQOL9AgFCyc6x"
+    }
+  ],
+  "staticData": {
+    "node:WooCommerce Trigger": {},
+    "node:Kiểm tra đơn hàng mới tạo": {
+      "webhookId": 50,
+      "secret": "5c3ce23c910c4d32a79f30a5cbd26e45"
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-26T07:11:00.509Z",
+  "versionId": "27c7589d-7605-4d89-b1a7-95e9f9bca281"
+}
