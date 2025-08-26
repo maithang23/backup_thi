@@ -1,0 +1,1452 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out4": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Content2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Aggregate6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate6": {
+      "main": [
+        [
+          {
+            "node": "Content2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request5": {
+      "main": [
+        [
+          {
+            "node": "Split Out5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Split Out4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Cập nhật nội dung2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lấy nội dung2": {
+      "main": [
+        [
+          {
+            "node": "Code8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Code6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code6": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cập nhật nội dung2": {
+      "main": [
+        [
+          {
+            "node": "lấy nội dung2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Content2": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out5": {
+      "main": [
+        [
+          {
+            "node": "check image2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "check image2": {
+      "main": [
+        [
+          {
+            "node": "Code7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code7": {
+      "main": [
+        [
+          {
+            "node": "Aggregate7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate7": {
+      "main": [
+        [
+          {
+            "node": "Ảnh2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Ảnh2",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ảnh2": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code8": {
+      "main": [
+        [
+          {
+            "node": "Aggregate8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate8": {
+      "main": [
+        [
+          {
+            "node": "Zalo Send Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Ảnh2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "kiểm tra trạng thái": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Get image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "kiểm tra trạng thái",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get image": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "replace background",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "replace background": {
+      "main": [
+        [
+          {
+            "node": "kiểm tra trạng thái",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-09T09:47:25.261Z",
+  "id": "D6Fptke410u9eqiP",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "auto_post_fb Thắng",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2144,
+        224
+      ],
+      "id": "e9ec9f3e-f1ea-4dc3-b0ba-58ad122cb7b0",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "results",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -624,
+        -208
+      ],
+      "id": "510eafd1-6b75-4190-8d15-2cf864600baa",
+      "name": "Split Out4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2805947-23bb-42bc-8758-4a78e372b3d7",
+              "name": "title",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "27c45a5e-9a40-497b-a4c3-8ff433669683",
+              "name": "url",
+              "value": "={{ $json.url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -416,
+        -208
+      ],
+      "id": "8c5d7b25-7b14-4f5a-a1bb-27be05cee929",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -176,
+        -208
+      ],
+      "id": "a06b3380-9740-4313-88f3-43f23db9981d",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.tavily.com/extract",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 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"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "urls",
+              "value": "={{ $json.url }}"
+            },
+            {
+              "name": "include_images",
+              "value": "false"
+            },
+            {
+              "name": "extract_depth",
+              "value": "basic"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        32,
+        -112
+      ],
+      "id": "445109db-5285-4bff-a1bc-22be4947c95c",
+      "name": "HTTP Request4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=- Tiểu đề: {{ $('Loop Over Items2').item.json.title }}\n- raw content: {{ $json.results[0].raw_content }}\n- URL: {{ $('Loop Over Items2').item.json.url }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "- Bạn là một nhân viên sale của một spa, chuyên phụ trách viết bài quảng cáo dịch vụ và mỹ phẩm đăng lên facebook\n- đầu vào: tiêu đề, nội dung thô, URL\n- Đọc kỹ tiêu đề và nội dung thô được cung cấp, tạo một tóm tắt ngắn gọn, nêu rõ điểm chính, những thông tin quan trọng và bất cứ thông tin nào liên quan đến dịch vụ và mỹ phẩm chăm sóc da.\n- Đảm bảo tóm tắt rõ ràng, thông tin phù hợp với độc giả đang tìm kiếm thông tin nhanh về dịch vụ bao gồm những lợi ích dịch vụ mang lại và những đặc điểm nổi bật của dịch vụ và sản phẩm đó.\n- cung cấp tóm tắt theo định dạng có cấu trúc, sử dụng dấu đầu dòng hoặc đoạn văn ngắn để rõ ràng.\n- định dạng đầu ra:\n+ một tóm tắt rõ ràng và ngắn gọn về thông tin sản phẩm\n+ bao gồm tham chiếu đến tiêu đề và url để có ngữ cảnh\n+ định dạng plain text không chứa các ký tự markdown như *, ** hoặc #.v.v.. "
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        272,
+        -112
+      ],
+      "id": "db6da115-f730-4602-b527-27257a095eef",
+      "name": "Basic LLM Chain2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        384,
+        80
+      ],
+      "id": "31994391-e7b7-4d77-b300-b9a9ff72a83a",
+      "name": "Google Gemini Chat Model4",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "jETUIHbao5VpmN6h",
+          "name": "Sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b6ab2317-a5cc-4e84-b8b5-0f3ab43308e9",
+              "name": "all",
+              "value": "={{ $itemindex+1 }}. {{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        32,
+        -288
+      ],
+      "id": "e363a8ce-58d6-404d-81ca-7c4ace48208f",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "all"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        272,
+        -288
+      ],
+      "id": "86f680c3-c29a-4be1-850d-c42a28abf629",
+      "name": "Aggregate6"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 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"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{{ $json['chủ đề'] }}\",\n  \"topic\": \"general\",\n  \"search_depth\": \"basic\",\n  \"chunks_per_source\": 3,\n  \"max_results\": 5,\n  \"time_range\": null,\n  \"days\": 7,\n  \"include_answer\": false,\n  \"include_raw_content\": false,\n  \"include_images\": true,\n  \"include_image_descriptions\": false,\n  \"include_domains\": [],\n  \"exclude_domains\": []\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1040,
+        240
+      ],
+      "id": "1c2b7873-bf7d-47c6-819a-bf3cc0c653b1",
+      "name": "HTTP Request5"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1248,
+        -32
+      ],
+      "id": "be3514a9-acba-4b0a-8cc5-ae0ff563b28d",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4",
+          "mode": "list",
+          "cachedResultName": "spacalla",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id",
+              "lookupValue": "={{ $json['id'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1872,
+        -32
+      ],
+      "id": "0af2d1f3-78d2-4294-861c-e8f6b1078739",
+      "name": "lấy nội dung2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "e4XIghkwNhZEV5WX",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7423bdcc-459b-4207-9e24-bf4ac4f83078",
+              "leftValue": "={{ $json['trạng thái'] }}",
+              "rightValue": "Đã đăng",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "6ad294f8-0741-483e-b4de-118dd6617af5",
+              "leftValue": "={{ $json[\"ngày tạo\"].split('/').reverse().join('-') }}",
+              "rightValue": "={{ new Date().toISOString().slice(0, 10) }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1712,
+        224
+      ],
+      "id": "44772cd6-ad40-4a59-bbb0-915a05f22f17",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "jsCode": "let items = $input.all();\nlet minItem = items[0];\n\nfor (const item of items) {\n  if (item.json.id < minItem.json.id) {\n    minItem = item;\n  }\n}\n\nreturn [minItem];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1504,
+        224
+      ],
+      "id": "5d8f7566-9aa4-464c-badb-1e036bb86dc1",
+      "name": "Code6"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0f1aad73-2557-4470-9375-a9f3f3b46a09",
+              "leftValue": "={{ $json['Nội dung'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1280,
+        224
+      ],
+      "id": "ef06fe23-fd11-45b6-a465-becb2e8de81a",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4",
+          "mode": "list",
+          "cachedResultName": "spacalla",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Code6').item.json.id }}",
+            "Ảnh": "={{ $json.images[0][0].url }}\n{{ $json.images[1][0].url }}\n{{ $json.images[2][0].url }}",
+            "Nội dung": "={{ $('Content2').item.json.output }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "chủ đề",
+              "displayName": "chủ đề",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ngày tạo",
+              "displayName": "ngày tạo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "trạng thái",
+              "displayName": "trạng thái",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ngày đăng",
+              "displayName": "ngày đăng",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Link bài viết",
+              "displayName": "Link bài viết",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Nội dung",
+              "displayName": "Nội dung",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ảnh",
+              "displayName": "Ảnh",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1664,
+        -32
+      ],
+      "id": "d0ff9909-3da5-46c8-8bba-bdf7e7bb4eac",
+      "name": "Cập nhật nội dung2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "e4XIghkwNhZEV5WX",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.all }}",
+        "options": {
+          "systemMessage": "=## NHIỆM VỤ:\nViết bài quảng cáo Facebook sáng tạo cho dịch vụ và sản phẩm chăm sóc da theo chủ đề {{ $('Code6').item.json['chủ đề'] }}.\n\n##Tên spa: Calla De beaute\n\n## BƯỚC 1: TỔNG HỢP THÔNG TIN\nTừ 5 đoạn tóm tắt của các bài viết Google liên quan đến chủ đề chăm sóc da {{ $('Code6').item.json['chủ đề'] }}, hãy:\n\nRút ra những điểm nổi bật và thuyết phục nhất về:\n\nLợi ích nổi bật của liệu trình/skincare\n\nCảm nhận thực tế của khách hàng (review, feedback)\n\nTrải nghiệm thư giãn, không gian spa, công nghệ sử dụng\n\nHiệu quả cải thiện da (trước/sau), thời gian phục hồi\n\nThành phần tự nhiên, dược mỹ phẩm cao cấp nếu có\n\nTập trung vào các yếu tố tạo cảm xúc & kích thích hành động:\n\nThư giãn – làm đẹp – tái tạo năng lượng\n\nTự thưởng – chăm sóc bản thân – nâng tầm vẻ đẹp\n\nXu hướng làm đẹp lành tính – tự nhiên – không xâm lấn\n\n## BƯỚC 2: VIẾT BÀI QUẢNG CÁO FACEBOOK\nDựa trên nội dung tổng hợp từ bước 1, hãy viết một bài quảng cáo hấp dẫn với:\n\n## Bố cục rõ ràng:\nMở đầu gây chú ý\nGợi cảm xúc, nhấn mạnh vấn đề mà khách hàng đang gặp phải (da xỉn màu, mụn, stress…), hoặc đưa ra lời mời hấp dẫn.\n\nNội dung chính\nNêu bật giá trị và trải nghiệm độc quyền của dịch vụ/sản phẩm:\n\nTại sao nên chọn spa này?\n\nLiệu trình có gì đặc biệt?\n\nFeedback khách hàng?\n\nTrước/sau rõ rệt?\n\nKết thúc bằng lời kêu gọi hành động mạnh mẽ\nVí dụ:\n👉 “Đặt lịch ngay để nhận ưu đãi 50%!”\n👉 “Inbox ngay – số lượng suất ưu đãi có hạn!”\n👉 “Tự tin với làn da đẹp – chỉ sau 1 lần trải nghiệm!”\n\n💡 PHONG CÁCH:\nGần gũi, ngôn ngữ tự nhiên như đang trò chuyện\n\nChèn emoji để tăng tính thu hút (ví dụ: 💆‍♀️✨🌿🔥💖)\n\nNgắt dòng hợp lý, mỗi đoạn ngắn 1–2 câu\n\nTránh viết quá dài, ưu tiên dễ hiểu và cuốn hút\n\nĐoạn liên hệ bắt buộc (chèn vào cuối bài viết):\n- số điện thoại: 0327191802.\n- địa chỉ: 80 Văn Cao, Tp Buôn Ma Thuột, Daklak.\n- Tiktok: Calla de beauty.\n\nThêm tối đa 3 hashtag phù hợp cuối bài.\n\n- output:\n\nMột bài đăng Facebook hoàn chỉnh có bố cục rõ ràng (tối đa 200 từ).\n\nđịnh dạng plain text không chứa các ký tự markdown như *, ** hoặc #.v.v.."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        624,
+        -288
+      ],
+      "id": "c86c5591-f834-402f-9026-ecf792a0c803",
+      "name": "Content2"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "images",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -848,
+        448
+      ],
+      "id": "acba74af-19dc-4499-b19d-822b44d3742c",
+      "name": "Split Out5"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.images }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -640,
+        448
+      ],
+      "id": "5651d7ef-97bc-4919-b6e3-8ebd1700aab4",
+      "name": "check image2",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lấy toàn bộ URL ảnh hợp lệ\nconst validImageUrls = items\n  .map(item => item.json?.images)\n  .filter(url => typeof url === 'string' && url.startsWith('http'));\n\n// Tạo danh sách dạng chuỗi\nconst imageListString = validImageUrls\n  .map((url, i) => `${i + 1}. ${url}`)\n  .join('\\n');\n\n// Gắn lại mỗi item cũ với thêm context imageListString\nreturn items.map(item => {\n  return {\n    json: {\n      ...item.json,\n      imageListString,\n      allValidImages: validImageUrls\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -384,
+        448
+      ],
+      "id": "6a48ab9f-6843-45fd-b38f-efba4d372acd",
+      "name": "Code7"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "allValidImages"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        448
+      ],
+      "id": "ae216f0d-cc6e-4b9d-9811-7a23752e28d8",
+      "name": "Aggregate7"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"title\",\n  \"src1\": \"link\",\n  \"src2\": \"link\",\n  \"src3\": \"link\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        160,
+        672
+      ],
+      "id": "c4e99cd7-e2cc-4fb4-a674-8f216e1b06e5",
+      "name": "Structured Output Parser2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=- Hình ảnh: {{ $json.allValidImages[0] }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=- Bạn là 1 Photographer, hãy kiểm trả tất cả hình ảnh:  \n+ - Chọn ra 3 bức ảnh bắt đầu bằng https:// và có đuôi như .png, .jpg, .jpeg, .gif… phù hợp với tiêu đề : {{ $('HTTP Request5').item.json.query }} nhất \n+ bỏ qua những url Source image is unreachable\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -32,
+        448
+      ],
+      "id": "3f99d51b-4b0e-41b4-a59b-b20564fdea98",
+      "name": "Ảnh2"
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.flatMap(item => {\nconst urls = item.json[\"Ảnh\"].split('\\n');\n\nreturn urls.map(url => ({\njson: {\n\"Ảnh\": url.trim()\n}\n}));\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2064,
+        -32
+      ],
+      "id": "f381a5cf-3cc6-4389-8b0a-de7ff4263f2a",
+      "name": "Code8"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "Ảnh"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        -32
+      ],
+      "id": "c7ec7556-116f-413e-bad7-5001889370aa",
+      "name": "Aggregate8"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -96,
+        672
+      ],
+      "id": "79b758b1-2fee-4611-be8e-dfa41cf804dc",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "HcvkLZcRcuANBdLH",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4",
+          "mode": "list",
+          "cachedResultName": "spacalla",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y3AndbJ3rvqdvusx9EvrvsbSUE4FTJiVxCas0m3WHc4/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -1904,
+        224
+      ],
+      "id": "670aa38a-5ff4-45df-89db-5b2983b7ea53",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "e4XIghkwNhZEV5WX",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.status_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1296,
+        528
+      ],
+      "id": "bc0bc136-eec7-42b8-ae9d-b5151e66aae8",
+      "name": "kiểm tra trạng thái",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bd688f71-db2a-4abf-806c-dded03c26a8d",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "COMPLETED",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1712,
+        528
+      ],
+      "id": "0a0b6224-28df-443e-9d01-6eb5addd5e3f",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.response_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1952,
+        560
+      ],
+      "id": "f9ee71a6-229a-4a1a-8429-79852cb1ecf4",
+      "name": "Get image",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        784,
+        448
+      ],
+      "id": "798b1d46-77fa-4cf2-833d-92ebbe064e73",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "image_url",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        512,
+        448
+      ],
+      "id": "89508e90-11b7-4e7a-84f1-4fd63663f50b",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      image_url: [\n        $json.output.src1,\n        $json.output.src2,\n        $json.output.src3\n      ]\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        448
+      ],
+      "id": "466f7497-18ae-4723-9301-25cfaac3b788",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "images"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1072,
+        352
+      ],
+      "id": "59ff5f3b-01d8-4473-bc09-ec23c8cef794",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "threadId": "5536028982519892683",
+        "message": "=Bot đã tạo bài viết chủ đề: {{ $('lấy nội dung2').item.json['chủ đề'] }} \n{{ $('lấy nội dung2').item.json['ngày tạo'] }}\n\n{{ $('lấy nội dung2').item.json['Nội dung'] }}\n\nẢnh 1: {{ $json['Ảnh'][0] }}\n\nẢnh 2: {{ $json['Ảnh'][1] }}\n\nẢnh 3: {{ $json['Ảnh'][2] }}\n\na1: Đăng bài với ảnh 1\na2: Đăng bài với ảnh 2\na3: Đăng bài với ảnh 3\nall: Đăng bài với cả 3 ảnh\nk: bỏ qua chủ đề hiện tại",
+        "quote": {},
+        "mentions": {}
+      },
+      "type": "n8n-nodes-zalo-tools.zaloSendMessage",
+      "typeVersion": 4,
+      "position": [
+        2448,
+        -32
+      ],
+      "id": "b7c1af23-3f65-4336-b9c9-2367871024d5",
+      "name": "Zalo Send Message",
+      "credentials": {
+        "zaloApi": {
+          "id": "Q9ZDuWnqr1DHtDUl",
+          "name": "Zalo API Sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1504,
+        528
+      ],
+      "id": "84c98b0d-d207-48fa-9352-b83228932951",
+      "name": "Wait1",
+      "webhookId": "f5ca5999-280b-4abc-a9af-97504f0ccb1b"
+    },
+    {
+      "parameters": {
+        "content": "## Research top 5 tìm kiếm theo chủ dề\n",
+        "height": 368,
+        "width": 1056
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1952,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "5aaab871-86b1-4464-9cec-cb9ca306700e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Tổng hợp nội dung và viết bài hoan chỉnh",
+        "height": 608,
+        "width": 1552,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -640,
+        -400
+      ],
+      "typeVersion": 1,
+      "id": "7ea8bc6d-76d1-456f-bae0-86c3c9bdf040",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Kiểm tra và chọn ảnh",
+        "height": 496,
+        "width": 928,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -656,
+        336
+      ],
+      "typeVersion": 1,
+      "id": "ca1db592-354e-4900-b22d-cd3bc8f038ca",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Xóa logo đồng bộ bối cảnh của ảnh",
+        "height": 512,
+        "width": 1328
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        752,
+        272
+      ],
+      "typeVersion": 1,
+      "id": "b4503622-54ac-4e6d-b209-100946060400",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/bria/background/replace",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "image_url",
+              "value": "={{ $json.image_url }}"
+            },
+            {
+              "name": "prompt",
+              "value": "A relaxing spa background with soft warm lighting, natural wooden textures, smooth stones, and green plants. The scene includes bamboo details, scented candles, and flower petals that create a peaceful and luxurious atmosphere, perfect for relaxation and wellness."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1072,
+        528
+      ],
+      "id": "99987bd8-5108-40ef-80c2-8289542479f9",
+      "name": "replace background",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-09T09:47:25.261Z",
+      "updatedAt": "2025-08-09T09:47:25.261Z",
+      "role": "workflow:owner",
+      "workflowId": "D6Fptke410u9eqiP",
+      "projectId": "XWfpQOL9AgFCyc6x"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-25T05:56:11.359Z",
+  "versionId": "e9799f3c-8c01-424e-83c9-22a43cc2666a"
+}
