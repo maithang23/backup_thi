@@ -1,0 +1,138 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Deactivate ChatbotZalo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deactivate ChatbotZalo": {
+      "main": [
+        [
+          {
+            "node": "Activate ChatbotZalo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Activate ChatbotZalo": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-08-09T09:47:24.163Z",
+  "id": "CpJFYAZkQhfacrtl",
+  "isArchived": false,
+  "meta": null,
+  "name": "Hồng - Bật Tắt WFL Chatbot Zalo",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            },
+            {
+              "triggerAtHour": 13
+            },
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -416,
+        16
+      ],
+      "id": "8c0b8f91-b19e-4872-bd4e-a1122a7c3f5d",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "activate",
+        "workflowId": {
+          "__rl": true,
+          "value": "fnAfJQfzHpDXo2QQ",
+          "mode": "list",
+          "cachedResultName": "1 - Hồng - Chatbot Zalo | 4 - Hồng - Quản lý trạng thái đơn hàng trên Zalo (#fnAfJQfzHpDXo2QQ)"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        48,
+        16
+      ],
+      "id": "8174dae9-cc5d-4358-9396-13285a04367b",
+      "name": "Activate ChatbotZalo",
+      "credentials": {
+        "n8nApi": {
+          "id": "SXC7EEQNg5HcM3Ac",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deactivate",
+        "workflowId": {
+          "__rl": true,
+          "value": "fnAfJQfzHpDXo2QQ",
+          "mode": "list",
+          "cachedResultName": "1 - Hồng - Chatbot Zalo | 4 - Hồng - Quản lý trạng thái đơn hàng trên Zalo (#fnAfJQfzHpDXo2QQ)"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -192,
+        16
+      ],
+      "id": "1c89de60-3f66-4cb5-913c-ff698e7e04bc",
+      "name": "Deactivate ChatbotZalo",
+      "credentials": {
+        "n8nApi": {
+          "id": "SXC7EEQNg5HcM3Ac",
+          "name": "n8n account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-09T09:47:24.163Z",
+      "updatedAt": "2025-08-09T09:47:24.163Z",
+      "role": "workflow:owner",
+      "workflowId": "CpJFYAZkQhfacrtl",
+      "projectId": "XWfpQOL9AgFCyc6x"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-22T07:10:35.795Z",
+  "versionId": "c1852373-c688-438a-88de-233d4a54222b"
+}
