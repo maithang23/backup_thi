@@ -1,0 +1,1380 @@
+{
+  "active": true,
+  "connections": {
+    "Load Handled Comment IDs": {
+      "main": [
+        [
+          {
+            "node": "Filter ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge6": {
+      "main": [
+        [
+          {
+            "node": "Check Handle Comment ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Already Handled Comments1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save Comment ID as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Filter Out Null Comments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Facebook : Reply comments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set PageID & Number of Latest Posts": {
+      "main": [
+        [
+          {
+            "node": "Facebook Graph API : Get Post from Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reverse Item to Match another Branch": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Facebook : Get Each Post Comments": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook Graph API : Get Post from Page": {
+      "main": [
+        [
+          {
+            "node": "Split Out Posts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out Posts": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Facebook : Get Each Post Comments",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Reverse Item to Match another Branch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Out Null Comments": {
+      "main": [
+        [
+          {
+            "node": "Load Handled Comment IDs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Handle Comment ID": {
+      "main": [
+        [
+          {
+            "node": "Filter Already Handled Comments1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter ID": {
+      "main": [
+        [
+          {
+            "node": "Merge6",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Save Comment ID as Handled": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook : Reply comments": {
+      "main": [
+        []
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set PageID & Number of Latest Posts",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Set PageID & Number of Latest Posts1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge7": {
+      "main": [
+        [
+          {
+            "node": "Check Handle Comment ID1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Handled Comment IDs1": {
+      "main": [
+        [
+          {
+            "node": "Filter ID1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Already Handled Comments": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save Comment ID as Handled1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Filter Out Null Comments1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge3": {
+      "main": [
+        [
+          {
+            "node": "Facebook : Reply comments1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set PageID & Number of Latest Posts1": {
+      "main": [
+        [
+          {
+            "node": "Facebook Graph API : Get Post from Page1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reverse Item to Match another Branch1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Facebook : Get Each Post Comments1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook Graph API : Get Post from Page1": {
+      "main": [
+        [
+          {
+            "node": "Split Out Posts1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out Posts1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Facebook : Get Each Post Comments1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Reverse Item to Match another Branch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Out Null Comments1": {
+      "main": [
+        [
+          {
+            "node": "Load Handled Comment IDs1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Handle Comment ID1": {
+      "main": [
+        [
+          {
+            "node": "Filter Already Handled Comments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter ID1": {
+      "main": [
+        [
+          {
+            "node": "Merge7",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Save Comment ID as Handled1": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-09T09:47:24.937Z",
+  "id": "qQXO59u74qio5GxC",
+  "isArchived": false,
+  "meta": null,
+  "name": "auto_cmt_fb Tùng",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -176,
+        608
+      ],
+      "id": "395fdd22-f3f9-4472-9ed2-296edfeca36c",
+      "name": "Merge6"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "excel comment"
+      },
+      "name": "Load Handled Comment IDs",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -624,
+        656
+      ],
+      "id": "910b5b83-512f-4504-aa51-742583b17aba",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "vm32dt0pJY9oouo3",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message }}",
+        "options": {
+          "systemMessage": "=Vai trò:\nBạn là trợ lý chăm sóc khách hàng cho fanpage chuyên về spa và sản phẩm chăm sóc da.\n\nNhiệm vụ:\n\nĐọc và hiểu nội dung của bài viết: {{ $json.content }}.\n\nTrả lời ngắn gọn, thân thiện, tự nhiên cho comment của khách.\n\nNội dung phản hồi phải rượt đuổi theo ý chính của \"bài viết\" + gắn kết với nội dung comment khách.\n\nKhông cung cấp chi tiết cụ thể trong comment, mà luôn khuyến khích khách nhắn tin trực tiếp (Inbox) để được tư vấn kỹ hơn.\n\nXưng hô tự nhiên: chị/em/anh.\n\nTránh trả lời quá máy móc hoặc giống nhau cho tất cả.\n\nĐịnh dạng câu trả lời (output):\n\nChào khách hàng + bắt nhịp theo nội dung “bài viết”.\n\nPhản hồi phù hợp với comment của khách.\n\nLời mời vào Inbox để tư vấn thêm.\n\nThêm emoji nhẹ nhàng (🌸✨💌…).\n\nVí dụ (mang tính khung, không phụ thuộc chi tiết bài viết):\n\nNếu “bài viết” nói về dịch vụ chăm sóc da, khách hỏi giá:\n👉 “Dạ em chào anh chị 🌸 dịch vụ trong bài viết hôm nay đang được nhiều khách quan tâm lắm đó ạ. Chị nhắn tin trực tiếp cho page để em gửi bảng giá chi tiết và ưu đãi cho chị nha 💌”\n\nNếu “bài viết” nói về sản phẩm dưỡng da, khách khen:\n👉 “Em cảm ơn anh chị đã quan tâm đến sản phẩm trong bài viết ✨ Chị nhắn tin cho page để em gửi thêm thông tin chi tiết hơn nha 🌸”"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        880,
+        192
+      ],
+      "id": "93e876dd-4d08-43ab-b850-5a80cfc9cd17",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "3e4fabee-5b79-481b-9d1d-05cde4dfb19f",
+              "leftValue": "={{ $json.isAlreadyHandled }}",
+              "rightValue": "={{ $json.comment_id }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "Filter Already Handled Comments1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        256,
+        608
+      ],
+      "id": "31b54baa-7e48-40de-8acd-8c4eda824de6"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {
+          "includeUnpaired": true
+        }
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -1120,
+        432
+      ],
+      "id": "d7a60540-1bfd-4129-8137-8a1b4375b215",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1248,
+        400
+      ],
+      "id": "0fc53050-0649-4a48-8d8c-fb1f6100927d",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v22.0/{{ $json.comment_id }}/comments",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer EAAOpeF6kHk0BPHWsiDaEUKLxsZBsSBAKIZBWNM5MvqbxNtjR38VsKEQEbrqOZAqZBZCy20VLXPUbgMxSxZBhzBBVIEfrL06ZBt6jmdmAjcrlZB6pALa9hZBxp4GHPnZB403BQj3KkZCzsptDC6b9TPQy6dOYZAFdJV8C8boCVHwQ0BilMHMeLpOHfairaIDd7WYYL9BM3GXZBGdCu"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "message",
+              "value": "={{ $json.output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1408,
+        400
+      ],
+      "id": "50243d15-bef6-4eb5-8f22-dd32a8ccf2dc",
+      "name": "Facebook : Reply comments"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d70f742-0848-44b1-8dbe-9b125dc046b3",
+              "name": "Number_of_Latest_Posts",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "id": "6744bb50-c34f-429d-8364-da14c9cbaa77",
+              "name": "FB_Page_Id",
+              "type": "string",
+              "value": "=744572285404134"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f8451e64-40c4-4fc4-9897-0b47a8ef6474",
+      "name": "Set PageID & Number of Latest Posts",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -2080,
+        400
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "jsCode": "return items;\n"
+      },
+      "id": "ff9ef7a5-8292-40ed-b223-52bbfbeb9e02",
+      "name": "Reverse Item to Match another Branch",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        -1344,
+        608
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v22.0",
+        "node": "={{ $json.id }}",
+        "edge": "comments",
+        "options": {
+          "fields": {
+            "field": [
+              {
+                "name": "=id,from,message,created_time,comment_count"
+              }
+            ]
+          },
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "order",
+                "value": "reverse_chronological"
+              }
+            ]
+          }
+        }
+      },
+      "id": "9da96503-18a6-4626-97f0-c698bac0656b",
+      "name": "Facebook : Get Each Post Comments",
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "position": [
+        -1344,
+        304
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "pE0SxUuzJGBXmOnc",
+          "name": "thang"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v22.0",
+        "node": "={{ $json.FB_Page_Id }}/feed",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "limit",
+                "value": "={{ $json.Number_of_Latest_Posts }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "1c956682-aec9-45ce-a24e-fff100450795",
+      "name": "Facebook Graph API : Get Post from Page",
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "position": [
+        -1824,
+        400
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "pE0SxUuzJGBXmOnc",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "a1fbed09-f17a-435d-b999-9d8950fa19ae",
+      "name": "Split Out Posts",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        -1568,
+        400
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "4d8bd55c-35d0-40db-98ac-a954b0a99710",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.data[0].message }}",
+              "rightValue": ""
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "bbf16089-7a53-454d-9acd-5fcf24d07c5c",
+      "name": "Filter Out Null Comments",
+      "type": "n8n-nodes-base.filter",
+      "position": [
+        -912,
+        432
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "jsCode": "const sessionId = (() => {\n  try {\n    return $('Webhook').item.json.body.entry?.[0]?.id || 'unknown';\n  } catch (e) {\n    return 'unknown';\n  }\n})();\n\n// 🔄 Nhận dữ liệu từ 2 input của node Merge6\nconst inputComments = $input.all().filter(i => i.json.data);  // Facebook comment data\nconst groupedHandledItems = $input.all().filter(i => i.json.total_entries);  // Grouped Supabase\n\n// 🧱 Tạo set các comment_id đã được xử lý\nconst handledCommentIds = new Set();\nfor (const item of groupedHandledItems) {\n  handledCommentIds.add(item.json.comment_id);\n}\n\n// 🔍 Tạo map để loại bỏ các reply_id trùng nhau\nconst seenReplyIds = new Set();\nconst results = [];\n\nfor (const item of inputComments) {\n  const input = item.json;\n  const comments = input.data || [];\n\n  for (const cmt of comments) {\n    const reply_id = cmt.id;\n    if (seenReplyIds.has(reply_id)) continue; // Đã xử lý rồi, bỏ qua\n\n    seenReplyIds.add(reply_id);\n\n    const name = cmt.from?.name || '';\n    const message = cmt.message || '';\n    const created_time = cmt.created_time || '';\n    const content = input.message || '';\n\n    // Nếu reply_id khớp với comment_id đã xử lý\n    const isAlreadyHandled = handledCommentIds.has(reply_id);\n\n    // Gán comment_id từ supabase nếu đã có\n    const matchedCommentId = isAlreadyHandled ? reply_id : '';\n\n    results.push({\n      json: {\n        sessionId,\n        reply_id,\n        comment_id: matchedCommentId,\n        name,\n        message,\n        created_time,\n        content,\n        isAlreadyHandled\n      }\n    });\n  }\n}\n\nreturn results;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        32,
+        608
+      ],
+      "id": "45fcce91-ed67-427c-afd8-f8193816eac8",
+      "name": "Check Handle Comment ID"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\n// Nhóm các item theo comment_id\nconst grouped = {};\n\nfor (const item of items) {\n  const { comment_id, reply1_id, reply2_id } = item.json;\n\n  if (!grouped[comment_id]) {\n    grouped[comment_id] = {\n      comment_id,\n      reply1_ids: [],\n      reply2_ids: [],\n      count: 0,\n    };\n  }\n\n  // Gộp reply nếu có\n  if (reply1_id) grouped[comment_id].reply1_ids.push(reply1_id);\n  if (reply2_id) grouped[comment_id].reply2_ids.push(reply2_id);\n\n  grouped[comment_id].count += 1;\n}\n\n// Chuyển kết quả về dạng mảng JSON để n8n xuất ra\nreturn Object.values(grouped).map(entry => ({\n  json: {\n    comment_id: entry.comment_id,\n    reply1_ids: entry.reply1_ids,\n    reply2_ids: entry.reply2_ids,\n    total_entries: entry.count,\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        656
+      ],
+      "id": "c51abd4c-433b-45c5-bc78-fe91d72cb4ee",
+      "name": "Filter ID"
+    },
+    {
+      "parameters": {
+        "tableId": "excel comment",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "comment_id",
+              "fieldValue": "={{ $json.reply_id }}"
+            },
+            {
+              "fieldId": "created_at",
+              "fieldValue": "={{ new Date().toLocaleString() }}"
+            }
+          ]
+        }
+      },
+      "name": "Save Comment ID as Handled",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        912,
+        560
+      ],
+      "id": "208ae7c3-a948-44b7-b4a9-cd77c2c76dfc",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "vm32dt0pJY9oouo3",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        864,
+        384
+      ],
+      "id": "696ac93f-264f-4c64-b339-0f0998f7c05d",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "HcvkLZcRcuANBdLH",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        992,
+        384
+      ],
+      "id": "24e508a6-b6b1-43cf-979d-1e396db1be12",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "mGc6gwiRkUlTQyPg",
+          "name": "db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2640,
+        912
+      ],
+      "id": "0acccd3c-2314-4a56-bf1d-e0da2996a90d",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "content": "## Lấy cmt ",
+        "height": 656,
+        "width": 1360
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2128,
+        176
+      ],
+      "typeVersion": 1,
+      "id": "054e0f1c-5b3d-4acc-b18e-eb841f5a3568",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Kiểm tra những cmt đã trả lời",
+        "height": 384,
+        "width": 1056,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -672,
+        496
+      ],
+      "typeVersion": 1,
+      "id": "b1ca2378-eb2c-49a3-9581-3b2040588dbf",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Đọc cmt và trả lời",
+        "height": 800,
+        "width": 896,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        768,
+        64
+      ],
+      "typeVersion": 1,
+      "id": "402b70b7-5d94-4aac-bcf1-ce0433b926ae",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -176,
+        1552
+      ],
+      "id": "acaae49b-ec6d-451b-b36f-a3deef7f78d2",
+      "name": "Merge7"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "excel comment"
+      },
+      "name": "Load Handled Comment IDs1",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -624,
+        1600
+      ],
+      "id": "f14c6883-c544-4dbe-9f23-83673bfb7ba8",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "vm32dt0pJY9oouo3",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message }}",
+        "options": {
+          "systemMessage": "=Vai trò:\nBạn là trợ lý chăm sóc khách hàng cho fanpage chuyên về spa và sản phẩm chăm sóc da.\n\nNhiệm vụ:\n\nĐọc và hiểu nội dung của bài viết: {{ $json.content }}.\n\nTrả lời ngắn gọn, thân thiện, tự nhiên cho comment của khách.\n\nNội dung phản hồi phải rượt đuổi theo ý chính của \"bài viết\" + gắn kết với nội dung comment khách.\n\nKhông cung cấp chi tiết cụ thể trong comment, mà luôn khuyến khích khách nhắn tin trực tiếp (Inbox) để được tư vấn kỹ hơn.\n\nXưng hô tự nhiên: chị/em/anh.\n\nTránh trả lời quá máy móc hoặc giống nhau cho tất cả.\n\nĐịnh dạng câu trả lời (output):\n\nChào khách hàng + bắt nhịp theo nội dung “bài viết”.\n\nPhản hồi phù hợp với comment của khách.\n\nLời mời vào Inbox để tư vấn thêm.\n\nThêm emoji nhẹ nhàng (🌸✨💌…).\n\nVí dụ (mang tính khung, không phụ thuộc chi tiết bài viết):\n\nNếu “bài viết” nói về dịch vụ chăm sóc da, khách hỏi giá:\n👉 “Dạ em chào anh chị 🌸 dịch vụ trong bài viết hôm nay đang được nhiều khách quan tâm lắm đó ạ. Chị nhắn tin trực tiếp cho page để em gửi bảng giá chi tiết và ưu đãi cho chị nha 💌”\n\nNếu “bài viết” nói về sản phẩm dưỡng da, khách khen:\n👉 “Em cảm ơn anh chị đã quan tâm đến sản phẩm trong bài viết ✨ Chị nhắn tin cho page để em gửi thêm thông tin chi tiết hơn nha 🌸”"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        880,
+        1136
+      ],
+      "id": "d6b34ea1-297e-410f-a895-fc67f0d69ff7",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "3e4fabee-5b79-481b-9d1d-05cde4dfb19f",
+              "leftValue": "={{ $json.isAlreadyHandled }}",
+              "rightValue": "={{ $json.comment_id }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "Filter Already Handled Comments",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        256,
+        1552
+      ],
+      "id": "100cbb63-568b-494c-afd0-b5c90381efbd"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {
+          "includeUnpaired": true
+        }
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -1120,
+        1376
+      ],
+      "id": "11cac143-8011-4bce-a519-0c7d61e66414",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1248,
+        1344
+      ],
+      "id": "05bd69d2-ef50-4f40-b624-e6d6e9c315b1",
+      "name": "Merge3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v22.0/{{ $json.comment_id }}/comments",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer EAAKSltUNvtABPFVti2NYnzkXwuzTQG3DErM7vIzBjHIDpZAT4gkqbpZBdetwBjUW3nTo60wnO0mHYCbwyu2KePCu9Hz1umRYkeFzyJ5iYYQLtB2MMmYT5bex2D1dRH4JRr5qUQFsi08lTPKsNpPsIT0awsI72jeqdxYeqt9QwDikwUGaI7jPf6ZCFxmIC0Ef1I6UxVq"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "message",
+              "value": "={{ $json.output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1408,
+        1344
+      ],
+      "id": "ce62a39a-e3f4-4c01-96c1-374a77cc09b5",
+      "name": "Facebook : Reply comments1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d70f742-0848-44b1-8dbe-9b125dc046b3",
+              "name": "Number_of_Latest_Posts",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "id": "6744bb50-c34f-429d-8364-da14c9cbaa77",
+              "name": "FB_Page_Id",
+              "type": "string",
+              "value": "=650808194786249"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bb8e7ed0-c240-4774-9d07-da0496e22bef",
+      "name": "Set PageID & Number of Latest Posts1",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -2080,
+        1344
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "jsCode": "return items;\n"
+      },
+      "id": "18ca60b9-0a24-43a6-b9fe-7cf4a20d9310",
+      "name": "Reverse Item to Match another Branch1",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        -1344,
+        1552
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v22.0",
+        "node": "={{ $json.id }}",
+        "edge": "comments",
+        "options": {
+          "fields": {
+            "field": [
+              {
+                "name": "=id,from,message,created_time,comment_count"
+              }
+            ]
+          },
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "order",
+                "value": "reverse_chronological"
+              }
+            ]
+          }
+        }
+      },
+      "id": "bcf16bca-369a-409a-873b-c9d63b1d4a79",
+      "name": "Facebook : Get Each Post Comments1",
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "position": [
+        -1344,
+        1248
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "7cT1HwfIiCQKV3n0",
+          "name": "thang calla my"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v22.0",
+        "node": "={{ $json.FB_Page_Id }}/feed",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "limit",
+                "value": "={{ $json.Number_of_Latest_Posts }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "f8479da3-a8f8-416f-874d-38610401c575",
+      "name": "Facebook Graph API : Get Post from Page1",
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "position": [
+        -1824,
+        1344
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "7cT1HwfIiCQKV3n0",
+          "name": "thang calla my"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "4103d8b8-2224-4206-a1d7-fa125bb157da",
+      "name": "Split Out Posts1",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        -1568,
+        1344
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "4d8bd55c-35d0-40db-98ac-a954b0a99710",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.data[0].message }}",
+              "rightValue": ""
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "51cbdde4-c5ef-44f1-825b-7562bde7b739",
+      "name": "Filter Out Null Comments1",
+      "type": "n8n-nodes-base.filter",
+      "position": [
+        -912,
+        1376
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "jsCode": "const sessionId = (() => {\n  try {\n    return $('Webhook').item.json.body.entry?.[0]?.id || 'unknown';\n  } catch (e) {\n    return 'unknown';\n  }\n})();\n\n// 🔄 Nhận dữ liệu từ 2 input của node Merge6\nconst inputComments = $input.all().filter(i => i.json.data);  // Facebook comment data\nconst groupedHandledItems = $input.all().filter(i => i.json.total_entries);  // Grouped Supabase\n\n// 🧱 Tạo set các comment_id đã được xử lý\nconst handledCommentIds = new Set();\nfor (const item of groupedHandledItems) {\n  handledCommentIds.add(item.json.comment_id);\n}\n\n// 🔍 Tạo map để loại bỏ các reply_id trùng nhau\nconst seenReplyIds = new Set();\nconst results = [];\n\nfor (const item of inputComments) {\n  const input = item.json;\n  const comments = input.data || [];\n\n  for (const cmt of comments) {\n    const reply_id = cmt.id;\n    if (seenReplyIds.has(reply_id)) continue; // Đã xử lý rồi, bỏ qua\n\n    seenReplyIds.add(reply_id);\n\n    const name = cmt.from?.name || '';\n    const message = cmt.message || '';\n    const created_time = cmt.created_time || '';\n    const content = input.message || '';\n\n    // Nếu reply_id khớp với comment_id đã xử lý\n    const isAlreadyHandled = handledCommentIds.has(reply_id);\n\n    // Gán comment_id từ supabase nếu đã có\n    const matchedCommentId = isAlreadyHandled ? reply_id : '';\n\n    results.push({\n      json: {\n        sessionId,\n        reply_id,\n        comment_id: matchedCommentId,\n        name,\n        message,\n        created_time,\n        content,\n        isAlreadyHandled\n      }\n    });\n  }\n}\n\nreturn results;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        32,
+        1552
+      ],
+      "id": "044f68aa-0ea2-4757-ac52-e8f4c9a0758e",
+      "name": "Check Handle Comment ID1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\n// Nhóm các item theo comment_id\nconst grouped = {};\n\nfor (const item of items) {\n  const { comment_id, reply1_id, reply2_id } = item.json;\n\n  if (!grouped[comment_id]) {\n    grouped[comment_id] = {\n      comment_id,\n      reply1_ids: [],\n      reply2_ids: [],\n      count: 0,\n    };\n  }\n\n  // Gộp reply nếu có\n  if (reply1_id) grouped[comment_id].reply1_ids.push(reply1_id);\n  if (reply2_id) grouped[comment_id].reply2_ids.push(reply2_id);\n\n  grouped[comment_id].count += 1;\n}\n\n// Chuyển kết quả về dạng mảng JSON để n8n xuất ra\nreturn Object.values(grouped).map(entry => ({\n  json: {\n    comment_id: entry.comment_id,\n    reply1_ids: entry.reply1_ids,\n    reply2_ids: entry.reply2_ids,\n    total_entries: entry.count,\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        1600
+      ],
+      "id": "4bf85213-a5df-485c-ba93-1d68b2e61dd5",
+      "name": "Filter ID1"
+    },
+    {
+      "parameters": {
+        "tableId": "excel comment",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "comment_id",
+              "fieldValue": "={{ $json.reply_id }}"
+            },
+            {
+              "fieldId": "created_at",
+              "fieldValue": "={{ new Date().toLocaleString() }}"
+            }
+          ]
+        }
+      },
+      "name": "Save Comment ID as Handled1",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        912,
+        1504
+      ],
+      "id": "8041f605-4e8c-42e5-8156-890575df6254",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "vm32dt0pJY9oouo3",
+          "name": "thang"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        864,
+        1328
+      ],
+      "id": "2fa41e68-c1d3-4399-bbf5-a16409ea2c0d",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "HcvkLZcRcuANBdLH",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        992,
+        1328
+      ],
+      "id": "334dce36-bce9-44fb-ab4d-07ba150a508b",
+      "name": "Postgres Chat Memory1",
+      "credentials": {
+        "postgres": {
+          "id": "mGc6gwiRkUlTQyPg",
+          "name": "db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Calla de beaute\n",
+        "height": 816,
+        "width": 3808,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2128,
+        1024
+      ],
+      "typeVersion": 1,
+      "id": "45014e11-91ab-4393-9be4-352774fda75d",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-09T09:47:24.937Z",
+      "updatedAt": "2025-08-09T09:47:24.937Z",
+      "role": "workflow:owner",
+      "workflowId": "qQXO59u74qio5GxC",
+      "projectId": "XWfpQOL9AgFCyc6x"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-22T06:21:41.071Z",
+  "versionId": "ce46ab7e-f16e-4693-94f2-9d5c55e80daa"
+}
