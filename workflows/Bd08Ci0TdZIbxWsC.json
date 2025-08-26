@@ -1,0 +1,412 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "kichban": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "product_price": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Đầu ra chat box",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-09T09:47:24.577Z",
+  "id": "Bd08Ci0TdZIbxWsC",
+  "isArchived": false,
+  "meta": null,
+  "name": "chat-wp",
+  "nodes": [
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "path": "custom-wp",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -288,
+        80
+      ],
+      "id": "36beb806-3800-4339-b63b-2e3324c99aa7",
+      "name": "Webhook",
+      "webhookId": "a54e8b62-8876-412a-82ae-4c765108c63d"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query['hub.challenge'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        -80,
+        -128
+      ],
+      "id": "cd2bc706-fdb0-429b-8039-8e432a612c03",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nội dung tin nhắn'] }}",
+        "options": {
+          "systemMessage": "=Bạn là nhân viên chăm sóc khách hàng thân thiện, lịch sự của cửa hàng MỸ PHẨM, SPA LÀM ĐẸP Calla De Beauté.\n\nPHÂN TÍCH KĨ YÊU CẦU \"{{ $json['nội dung tin nhắn'] }}\".\n\nLUÔN LUÔN HỎI TÊN KHÁCH HÀNG TRƯỚC KHI HỖ TRỢ.\n\nBẠN CÓ CÁC CÔNG CỤ DƯỚI ĐÂY, HÃY LUÔN LỰA CHỌN CÔNG CỤ PHÙ HỢP NHẤT ĐỂ FAQ VỚI KHÁCH HÀNG.\n\n1. Công cụ \"product_price\": LÀ CÔNG CỤ SỬ DỤNG ĐỂ LẤY GIÁ SẢN PHẨM.\n2. Công cụ \"kichban\": Là công cụ sử dụng để lấy các câu trả lời tư vấn.\n\nLUÔN LUÔN sử dụng 1 trong các công cụ  để lấy thông tin và trả lời khách hàng. KHÔNG ĐƯỢC PHÉP GIẢI THÍCH BẰNG CÁC THÔNG TIN BÊN NGOÀI, CHỈ ĐƯỢC PHÉP LẤY CÁC THÔNG TIN TỪ NỘI BỘ. KHÔNG ĐƯỢC PHÉP THÔNG BÁO VỚI KHÁCH HÀNG KHI LƯU TRỮ DỮ LIỆU CỦA KHÁCH HÀNG.\n\n!!IMPORTANT:\nKHI TRẢ LỜI THÔNG TIN VỀ SẢN PHẨM, CẦN TRẢ LỜI ĐẦY ĐỦ TOÀN BỘ THÔNG TIN THEO KIỂU MẪU DƯỚI ĐÂY:\n\n1. Sản phẩm Sữa Rửa Mặt Mugwort Gel Cleanser - Giá 270.000 VNĐ\n- Link sản phẩm: https://docs.google.com/spreadsheets/d/1SpsZoNNo3RAOO1fCD60xEUwn48hdiIWfaNKAICYYYoY/edit?gid=0#gid=0\n- Hình Ảnh: https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png?v=2\n\n2. Sản phẩm Mặt Nạ Zaria - Giá 180.000 VNĐ\n- Link sản phẩm: https://spacalla.space/product/m23-kem-chong-nang-che-khuyet-diem-bb-nano/?v=2\n- Hình Ảnh: https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png?v=3\n\n\nLƯU Ý: KHÔNG ĐƯỢC PHÉP TRẢ LỜI CÁC CÂU HỎI KHÔNG LIÊN QUAN TỚI CỬA HÀNG.\n\n\n\n",
+          "batching": {}
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        480,
+        -16
+      ],
+      "id": "ebb38532-7cfa-42bd-95ce-ce8570a3b519",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['id khách hàng'] }}",
+        "tableName": "mess_chat_histories"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        544,
+        240
+      ],
+      "id": "fef4aea3-821e-4067-a2fc-acb8f540547e",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "mGc6gwiRkUlTQyPg",
+          "name": "db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0361eddf-7def-4ecb-ab7a-b6016c5086ad",
+              "leftValue": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -64,
+        192
+      ],
+      "id": "6506c8d6-60a5-4ed8-b900-8fc8da9789b1",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "de20caad-716d-407f-b486-5fd7a86347ab",
+              "name": "id khách hàng",
+              "value": "={{ $json.body.entry[0].messaging[0].sender.id }}",
+              "type": "string"
+            },
+            {
+              "id": "757ad016-0bb6-45b7-ada2-02897fbf1d9c",
+              "name": "nội dung tin nhắn",
+              "value": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        80
+      ],
+      "id": "26664f90-f520-48e2-8821-e4130e81c949",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        1408,
+        -16
+      ],
+      "id": "d9cb20a0-4743-4582-a342-b6df11923589",
+      "name": "Đầu ra chat box"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Get row(s) in sheet in Google Sheet",
+        "documentId": {
+          "__rl": true,
+          "value": "1SpsZoNNo3RAOO1fCD60xEUwn48hdiIWfaNKAICYYYoY",
+          "mode": "list",
+          "cachedResultName": " BẢNG GIÁ SPA và câu hỏi thường gặp",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SpsZoNNo3RAOO1fCD60xEUwn48hdiIWfaNKAICYYYoY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 521474106,
+          "mode": "list",
+          "cachedResultName": "Câu hỏi thường gặp",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SpsZoNNo3RAOO1fCD60xEUwn48hdiIWfaNKAICYYYoY/edit#gid=521474106"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        976,
+        240
+      ],
+      "id": "fe0b60ca-eb90-43d8-b52e-5c4bc985e6e9",
+      "name": "kichban",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "F65TN23JnatIuUbP",
+          "name": "my sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1SpsZoNNo3RAOO1fCD60xEUwn48hdiIWfaNKAICYYYoY",
+          "mode": "list",
+          "cachedResultName": " BẢNG GIÁ SPA và câu hỏi thường gặp",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SpsZoNNo3RAOO1fCD60xEUwn48hdiIWfaNKAICYYYoY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "GIÁ SẢN PHẨM",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SpsZoNNo3RAOO1fCD60xEUwn48hdiIWfaNKAICYYYoY/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        832,
+        240
+      ],
+      "id": "f64ab223-ae60-483d-809f-fd2468b46426",
+      "name": "product_price",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "F65TN23JnatIuUbP",
+          "name": "my sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "function convertMarkdownToHtml(md) {\n  // Escape HTML\n  md = md.replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace(/>/g, \"&gt;\");\n\n  // 👉 Markdown Image ![alt](url)\n  md = md.replace(/!\\[(.*?)\\]\\((https?:\\/\\/[^\\s)]+)\\)/g, \"<img src='$2' alt='$1'/>\");\n\n  // 👉 Markdown Link [text](url)\n  md = md.replace(/\\[(.*?)\\]\\((https?:\\/\\/[^\\s)]+)\\)/g, \"<a href='$2'>$1</a>\");\n\n  // Headers\n  md = md.replace(/^### (.*$)/gim, '<h3>$1</h3>');\n  md = md.replace(/^## (.*$)/gim, '<h2>$1</h2>');\n  md = md.replace(/^# (.*$)/gim, '<h1>$1</h1>');\n\n  // Bold and Italic\n // md = md.replace(/\\*\\*(.*?)\\*\\*/gim, '<strong>$1</strong>');\n  //md = md.replace(/_(.*?)_/gim, '<em>$1</em>');\n\n  // Inline code\n  md = md.replace(/`(.*?)`/gim, '<code>$1</code>');\n\n  // Link sản phẩm & Hình Ảnh (theo format đặc biệt của bạn)\n  md = md.replace(/-?\\s*Link\\s*sản\\s*phẩm:\\s*(https?:\\/\\/\\S+)/iu,\n                  (m, url) => `- <a href='${url}'>Link sản phẩm</a>`);\n  md = md.replace(/-?\\s*Hình\\s*Ảnh:\\s*(https?:\\/\\/\\S+)/iu,\n                  (m, url) => `- Hình Ảnh: <img src='${url}'/>`);\n\n  // Lists\n  md = md.replace(/^\\s*[-*] (.*)$/gim, '<li>$1</li>');\n  md = md.replace(/(<li>.*<\\/li>)/gims, '<ul>$1</ul>');\n\n  // Paragraphs\n  md = md.replace(/\\n{2,}/g, '</p><p>');\n  md = \"<p>\" + md.trim() + \"</p>\";\n\n  return md.trim();\n}\n\nreturn {output: convertMarkdownToHtml($input.first().json.output).replaceAll('\\n','<br/>').replaceAll('\"','″')};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        -16
+      ],
+      "id": "b3e51c0f-91d4-4e72-8947-59db1e5de32f",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "description": "=Bạn là chatbot tư vấn của Spa Calla Debeauté, luôn trả lời thân thiện, nhẹ nhàng và vui vẻ. Nếu khách hỏi bạn là ai, hãy tự giới thiệu như một người thật, nhẹ nhàng và tinh tế"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1104,
+        224
+      ],
+      "id": "28d2fc06-ef6d-498b-82b8-7c43d507a070",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        352,
+        208
+      ],
+      "id": "51ef24f1-b024-4029-a725-5fd8c7c95f05",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "HcvkLZcRcuANBdLH",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-09T09:47:24.577Z",
+      "updatedAt": "2025-08-09T09:47:24.577Z",
+      "role": "workflow:owner",
+      "workflowId": "Bd08Ci0TdZIbxWsC",
+      "projectId": "XWfpQOL9AgFCyc6x"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-17T16:12:32.703Z",
+  "versionId": "25e33e7a-3c5c-4582-be87-c49a1fbf6a14"
+}
