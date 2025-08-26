@@ -1,0 +1,231 @@
+{
+  "active": false,
+  "connections": {
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Zalo Message Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Download file": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-08-21T07:57:00.261Z",
+  "id": "yx8XPnMZpKfO7IjR",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Fix 4 Hồng",
+  "nodes": [
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-preview-05-20",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        160,
+        624
+      ],
+      "id": "38193a2d-1bc7-49f0-8edd-e36634a70857",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "jETUIHbao5VpmN6h",
+          "name": "Sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "threadId": "={{ $('Zalo Message Trigger').item.json.message.data.uidFrom }}",
+        "message": "={{ $json.id }}",
+        "quote": {},
+        "mentions": {},
+        "attachments": {
+          "attachment": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-zalo-tools.zaloSendMessage",
+      "typeVersion": 4,
+      "position": [
+        608,
+        96
+      ],
+      "id": "904c74b1-59a0-4ca3-a5cf-8b97161faf67",
+      "name": "Gửi Tin",
+      "credentials": {
+        "zaloApi": {
+          "id": "Q9ZDuWnqr1DHtDUl",
+          "name": "Zalo API Sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "",
+          "__regex": "https:\\/\\/(?:drive|docs)\\.google\\.com(?:\\/.*|)\\/d\\/([0-9a-zA-Z\\-_]+)(?:\\/.*|)"
+        },
+        "options": {
+          "fileName": "={{ $json.message.data.content }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        720,
+        624
+      ],
+      "id": "731801c6-4612-435e-ba34-610ddefe80b2",
+      "name": "Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Y92JA2Nql9fTnuAd",
+          "name": "Google sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Code",
+        "jsCode": "let fileId;\nlet fileName;\n\n// Trường hợp Drive trả về response[0]\nif ($json.response && Array.isArray($json.response) && $json.response[0]) {\n  fileId = $json.response[0].id;\n  fileName = $json.response[0].name;\n}\n\n// Trường hợp input chỉ có query\nelse if ($json.query) {\n  fileId = $json.query;\n}\n\n// Trường hợp có id, name trực tiếp\nelse if ($json.id) {\n  fileId = $json.id;\n  fileName = $json.name;\n}\n\nif (!fileId) {\n  // In ra nguyên input để bạn debug luôn\n  return \"ERROR: missing file id from input. Input was: \" + JSON.stringify($json);\n}\n\nconst imageUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;\n\nreturn JSON.stringify({\n  imageUrl,\n  filename: fileName || \"image.jpg\"\n});\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        1056,
+        640
+      ],
+      "id": "19988b0a-aaec-4696-9ca9-910d9ef972ff",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=- Đây là tên file: {{ $json.message.data.content }}\n- Hãy tìm chính xác ảnh bằng tool drive để tải.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        288
+      ],
+      "id": "1e08abd2-eff3-4c34-b49f-7b182c4d1697",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-zalo-tools.zaloMessageTrigger",
+      "typeVersion": 1,
+      "position": [
+        400,
+        288
+      ],
+      "id": "03672415-bc6e-46c3-9b5c-498234683999",
+      "name": "Zalo Message Trigger",
+      "webhookId": "01263cf0-79ca-462b-9fa8-a717eddba27c",
+      "credentials": {
+        "zaloApi": {
+          "id": "Q9ZDuWnqr1DHtDUl",
+          "name": "Zalo API Sora"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "15Ml6qp34EbRpoE7WkkumKVhaxtAtPoPR",
+          "mode": "list",
+          "cachedResultName": "1 (3).jpg",
+          "cachedResultUrl": "https://drive.google.com/file/d/15Ml6qp34EbRpoE7WkkumKVhaxtAtPoPR/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        176,
+        0
+      ],
+      "id": "0e1a61dd-cdc9-4f05-ad02-b446ca5875ad",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Y92JA2Nql9fTnuAd",
+          "name": "Google sora"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-21T07:57:00.261Z",
+      "updatedAt": "2025-08-21T07:57:00.261Z",
+      "role": "workflow:owner",
+      "workflowId": "yx8XPnMZpKfO7IjR",
+      "projectId": "XWfpQOL9AgFCyc6x"
+    }
+  ],
+  "staticData": {
+    "node:Zalo Message Trigger": {}
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-21T14:56:47.918Z",
+  "versionId": "20878f20-1970-4f8c-9ef9-59a45d8c7362"
+}
