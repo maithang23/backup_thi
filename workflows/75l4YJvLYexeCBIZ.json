@@ -1,0 +1,414 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Create image feature2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create image feature": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get image feature": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Get image feature",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Create image feature1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create image feature1": {
+      "main": [
+        []
+      ]
+    },
+    "Create image feature2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-09T09:47:23.704Z",
+  "id": "75l4YJvLYexeCBIZ",
+  "isArchived": false,
+  "meta": null,
+  "name": "test edit image",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        0
+      ],
+      "id": "09caba33-5627-48ee-a427-99e6d2efb7f4",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/flux-pro/v1.1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "image_url",
+              "value": "={{ $json.image }}"
+            },
+            {
+              "name": "prompt",
+              "value": "A serene spa background with soft natural lighting, minimalistic design, and warm beige tones. Wooden textures and smooth stone details create a calming atmosphere. A massage bed covered with white towels is placed in the center, surrounded by green plants and bamboo decor. Scented candles and a small bowl of flower petals rest on a wooden table. The background feels peaceful, luxurious, and perfect for relaxation."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        432,
+        -224
+      ],
+      "id": "d0bd529c-61b8-4ee6-91bd-32bd3fb503e1",
+      "name": "Create image feature",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.response_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        832,
+        0
+      ],
+      "id": "23dc810c-81bc-4b60-8f67-32682aff4f86",
+      "name": "Get image feature",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.status_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "303ed389-c905-402a-9c84-2df9c4ad276f",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.images[0].url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        0
+      ],
+      "id": "4dac8037-5103-458e-89f3-3aa965445098",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bd688f71-db2a-4abf-806c-dded03c26a8d",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "COMPLETED",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        0
+      ],
+      "id": "41af1bfa-b333-46ce-8fb9-38580dbf6fbb",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b2551484-56e7-42e5-a903-8ae3f3a232bc",
+              "name": "image",
+              "value": "https://www.bamboospa.com.vn/uploads/dich-vu/mstg_body-ngu/bamboospa.com.vn-massage-body-thu-gian-2.jpg",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -208,
+        288
+      ],
+      "id": "1417e849-4e7b-44f4-9e47-a05083d3c862",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/bria/background/replace",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "image_url",
+              "value": "={{ $json.image }}"
+            },
+            {
+              "name": "prompt",
+              "value": "A relaxing spa background with soft warm lighting, natural wooden textures, smooth stones, and green plants. The scene includes bamboo details, scented candles, and flower petals that create a peaceful and luxurious atmosphere, perfect for relaxation and wellness."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        160,
+        256
+      ],
+      "id": "6b9298bb-6e72-4eb4-a385-a3eb21fc1356",
+      "name": "Create image feature1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/flux-kontext-lora",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "image_url",
+              "value": "={{ $json.image_url }}"
+            },
+            {
+              "name": "prompt",
+              "value": "Recreate the entire image as a brand new scene, keeping the people in the same positions and poses, but redesign all surrounding objects, surfaces, and environment so that it looks like a luxurious indoor spa with warm lighting, natural wood tones, and decorative plants. Remove all graphic overlays, banners, or unrelated objects. Maintain a clean, realistic, and professional style"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        176,
+        -208
+      ],
+      "id": "89e47808-e18c-415f-aa1a-10b4fc3d31ca",
+      "name": "xóa logo",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/flux-pro/v1.1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "image_size",
+              "value": "landscape_16_9"
+            },
+            {
+              "name": "prompt",
+              "value": "A serene spa scene with a focus on professional acne treatment, showcasing smooth and healthy skin transformation, with soft lighting and soothing environment."
+            },
+            {
+              "name": "content_type",
+              "value": "image/jpeg"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        96,
+        0
+      ],
+      "id": "0b195826-6360-4850-8007-688583a9d73e",
+      "name": "Create image feature2",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "L8U4FBNA2wOBmr32",
+          "name": "fal"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-09T09:47:23.704Z",
+      "updatedAt": "2025-08-09T09:47:23.704Z",
+      "role": "workflow:owner",
+      "workflowId": "75l4YJvLYexeCBIZ",
+      "projectId": "XWfpQOL9AgFCyc6x"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-26T17:00:27.658Z",
+  "versionId": "1c269026-c138-4346-8fc5-b34740957018"
+}
